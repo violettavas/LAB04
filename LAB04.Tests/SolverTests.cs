@@ -16,6 +16,7 @@ public class SolverTests
     [TestCase("Frank", 52, "Hello! My name is Frank and i am 52 years old.")]
     [TestCase("grace", 1, "Hello! My name is Grace and i am 1 years old.")]
     [TestCase("Henry", 100, "Hello! My name is Henry and i am 100 years old.")]
+    [TestCase("nATaliA", 23, "Hello! My name is Natalia and i am 23 years old.")]
     public void Task0Test(string n, int a, string expected)
     {
         var result = Solver.IntroduceYourself(n, a);

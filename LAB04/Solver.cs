@@ -24,8 +24,11 @@
         /// </example>
         public static string IntroduceYourself(string name, int age)
         {
+            string lowerName = name.ToLower();
+
+            string formattedName = char.ToUpper(lowerName[0]) + lowerName.Substring(1);
             // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            return $"Hello! My name is {formattedName} and i am {age} years old.";
         }
 
         // =========================
