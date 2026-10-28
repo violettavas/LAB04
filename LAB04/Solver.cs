@@ -3,8 +3,8 @@
     /// <summary>
     /// Класс Solver содержит решения задач лабораторной работы.
     /// Методы сгруппированы по блокам.
-    /// Ф.И.О - 
-    /// Вариант - 
+    /// Ф.И.О - Ващило Виолетта Александровна
+    /// Вариант - 4
     /// </summary>
     public class Solver
     {
@@ -93,7 +93,11 @@
         public static string ConvertSeconds(int seconds)
         {
             // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            int hours = seconds / 3600;
+            int minutes = (seconds % 3600) / 60;
+            int leftSeconds = seconds % 60;
+
+            return $"{seconds} секунд = {hours} ч {minutes} мин {leftSeconds} сек";
         }
 
         /// <summary>
@@ -194,7 +198,22 @@
         public static string GetGradeDescription(int grade)
         {
             // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            switch(grade)
+            {
+                case 1:
+                    return "Оценка 1 - Плохо";
+                case 2:
+                    return "Оценка 2 - Неудовлетворительно";
+                case 3:
+                    return "Оценка 3 - Удовлетворительно";
+                case 4:
+                    return "Оценка 4 - Хорошо";
+                case 5:
+                    return "Оценка 5 - Отлично";
+                default:
+
+                    return $"Оценки {grade} не бывает";
+            }
         }
 
         /// <summary>
@@ -293,7 +312,22 @@
         public static string MaxOdd(int a, int b)
         {
             // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            if (b < a)
+            {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+
+            for (int i = b; i >= a; i--)
+            {
+                if (i % 2 != 0)
+                {
+                    return $"Максимальное нечётное число в диапазоне [{a}, {b}] = {i}";
+                }
+            }
+
+            return "Нечётных чисел нет";
         }
 
         /// <summary>
@@ -392,7 +426,21 @@
         public static string SumEvenInMatrix(int[,] matrix)
         {
             // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            int sum = 0;
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    if (matrix[i, j] % 2 == 0)
+                    {
+                        sum += matrix[i, j];
+                    }
+                }
+            }
+            return $"Сумма четных элементов = {sum}";
         }
 
         /// <summary>
